@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="history"
+            type="orange.com.todayhistory.history.bean.HistoryBean"/>
+
+        <variable
+            name="viewModel"
+            type="orange.com.todayhistory.history.viewmodel.HistoryViewModel"/>
+
+        <variable
+            name="adapter"
+            type="orange.com.todayhistory.history.view.RecyclerAdapter"/>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{history.e_id}"
+            android:onClick="@{viewModel.click}"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv"
+            app:adapter="@{adapter}">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </RelativeLayout>
+</layout>
